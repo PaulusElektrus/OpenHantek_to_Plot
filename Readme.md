@@ -5,27 +5,17 @@
 
 ## Usage
 
-    `python main.py -s data/test.csv`
+    `python main.py -o data/test.csv`
 
 ------------
 
 ## Help
 
-  -h, --help
-
-    show this help message and exit
-
-  -s SOURCE, --source SOURCE
-                        
-    path to .csv file from OpenHantek
-
+  -h, --help            show this help message and exit
+  -o OPEN, --open OPEN  path to .csv file from OpenHantek
   -w WINDOW, --window WINDOW
-                        
-    show the plot in a window?
-
-  -p PATH, --path PATH  
-  
-    or path for exporting the file to .svg
+                        show the plot in a window?
+  -s SAVE, --save SAVE  or path for exporting the file to .svg
 
 ------------
 
