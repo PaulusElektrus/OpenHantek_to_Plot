@@ -5,7 +5,7 @@
 
 ## Usage
 
-    `python main.py -o data/test.csv`
+    `python plot_app.py -o data/test.csv`
 
 ------------
 
