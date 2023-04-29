@@ -5,23 +5,26 @@
 
 ## Usage
 
-    `python plot_app.py -o data/test.csv`
+    `python plot_app.py data/test.csv`
 
 ------------
 
 ## Help
 
+positional arguments:
+  FILE                  path to a .csv file or folder containing .csv files from OpenHantek
+
+optional arguments:
   -h, --help            show this help message and exit
-  -o OPEN, --open OPEN  path to .csv file from OpenHantek
-  -w WINDOW, --window WINDOW
-                        show the plot in a window?
-  -s SAVE, --save SAVE  or path for exporting the file to .svg
+  -d DISPLAY, --display DISPLAY
+                        True displays the plot(s) in a window
+  -s SAVE, --save SAVE  specify a path to save the plot(s)
 
 ------------
 
 ## Result
 
-![Image](test.svg)
+![Image](test.csv.svg)
 
 ------------
 
