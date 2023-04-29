@@ -5,7 +5,7 @@
 
 ## Usage
 
-    `python plot_app.py data/test.csv`
+    `python plot.py data/test.csv`
 
 ------------
 
@@ -25,6 +25,12 @@ optional arguments:
 ## Result
 
 ![Image](test.csv.svg)
+
+------------
+
+## GUI
+
+A GUI would be a highlight for this project. In the folder flet_gui/ I played a bit with [flet](https://flet.dev/). But the results are not good at the moment and not working! I think I will try another GUI Framwork sometime...
 
 ------------
 

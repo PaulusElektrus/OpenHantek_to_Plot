@@ -1,5 +1,5 @@
 from typing import Dict
-from plot_app import plot
+import plot_hantek
 
 import flet
 from flet import (
@@ -15,6 +15,7 @@ from flet import (
     Row,
     Text,
     icons,
+    Image,
 )
 
 
@@ -53,7 +54,7 @@ def plot_app(page: Page):
             file_picker.upload(uf)
             
     def plot_api(e):
-        plot("uploads/test.csv", window=False, path="results/test.svg")
+        plot_hantek.open_csv("uploads", False, "results")
 
     # hide dialog in a overlay
     page.overlay.append(file_picker)
@@ -76,6 +77,11 @@ def plot_app(page: Page):
             "Plot",
             on_click=plot_api
         ),
+        Image(
+            src=f"uploads/test.csv.svg",
+            width=200,
+            height=200
+        )
     )
 
 
