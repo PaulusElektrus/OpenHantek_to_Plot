@@ -1,9 +1,11 @@
+#!/usr/bin/env python
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import argparse, os, glob
 
 
-def plot(file, show, save_path):
+def plot(file, show, save_path, pyGui=False):
 
     df = pd.read_csv(file, delimiter=";", decimal=",", thousands=".")
     df = df.astype(float)
@@ -61,6 +63,9 @@ def plot(file, show, save_path):
 
     plt.tight_layout()
 
+    if pyGui:
+        return plt.gcf()
+
     if save_path:
         head, tail = os.path.split(file)
         plt.savefig(save_path + "/" + tail + ".svg", format="svg", dpi=1200)
@@ -82,15 +87,21 @@ def x_lim_finder(df, column):
             is_60 = 0
 
 
-def open_csv(path, show, save_path):
+def open_csv(path, show, save_path, pyGui=False):
     if os.path.isfile(path):
         print("File found")
-        plot(path, show, save_path)
+        if pyGui:
+            return plot(path, show, save_path, True)
+        else:
+            plot(path, show, save_path)
 
     elif os.path.isdir(path):
         print("Directory found")
         for filepath in glob.glob(os.path.join(path, "*.csv")):
-            plot(filepath, show, save_path)
+            if pyGui:
+                return plot(path, show, save_path, True)
+            else:
+                plot(filepath, show, save_path)
 
     elif os.path.exists(path):
         print("Path does not exist")
