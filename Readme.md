@@ -1,10 +1,42 @@
 # OpenHantek to Plot
 
-Little command line program with GUI to build a plot out of exported .csv file(s) from [OpenHantek](http://openhantek.org/).
+&nbsp;
+
+### Little command line tool with GUI to build a plot out of exported .csv file(s) from [OpenHantek](http://openhantek.org/).
+
+&nbsp;
 
 ------------
 
+&nbsp;
+
+## Graphical User Interface
+
+&nbsp;
+
+Made with [PySimpleGUI](https://github.com/PySimpleGUI/PySimpleGUI/tree/master)
+
+Start the GUI with `python gui.py`
+
+&nbsp;
+
+![GUI](GUI.png)
+
+&nbsp;
+
+- Entering a file path will display the resulting plot and there is a option to save the plot.
+
+- Entering a folder path will convert all files found and you will be asked for a path to save the plots.
+
+&nbsp;
+
+------------
+
+&nbsp;
+
 ## Command Line Interface
+
+&nbsp;
 
 ### - Usage:
 
@@ -18,7 +50,7 @@ Little command line program with GUI to build a plot out of exported .csv file(s
 
   - ...
 
-
+&nbsp;
 
 ### - Help:
 
@@ -34,23 +66,32 @@ Little command line program with GUI to build a plot out of exported .csv file(s
 
   -s SAVE, --save SAVE --> specify a path to save the plot(s)
 
-------------
-
-## Graphical User Interface
-
-A GUI would be a highlight for this project. I played a bit with [flet](https://flet.dev/), but the results are not good and not working well! So I switched to...
-
-### [PySimpleGUI](https://github.com/PySimpleGUI/PySimpleGUI/tree/master)
-
-
-Start the GUI with `python gui.py`
-
-![GUI](GUI.png)
+&nbsp;
 
 ------------
+
+&nbsp;
+
+## How to export .csv files?
+
+&nbsp;
+
+![Export](OpenHantekExport.png)
+
+&nbsp;
+
+------------
+
+&nbsp;
 
 ## Resulting Plot for 'test.csv':
 
+&nbsp;
+
 ![Image](test.csv.svg)
+
+&nbsp;
+
+------------
 
 ### by PaulusElektrus
