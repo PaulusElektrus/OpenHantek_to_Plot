@@ -53,8 +53,9 @@ def plot(file, show, save_path, pyGui=False):
             y_fmixed = df["SPM / dB"]
             ax2.plot(x_f, y_fmixed, label="SPM")
             ind = x_lim_finder(df, "SPM / dB")
-        x_lim = x_f[ind]
-        ax2.set_xlim(0, x_lim)
+        if ind != None:
+            x_lim = x_f[ind]
+            ax2.set_xlim(0, x_lim)
         ax2.set_xlabel("Frequenz [kHz]")
         ax2.set_ylabel("Amplitude [dB]")
         ax2.legend()
@@ -81,10 +82,12 @@ def x_lim_finder(df, column):
     for ind, column in enumerate(df[column]):
         if column == -60 or column == float("nan"):
             is_60 += 1
-            if is_60 == 20:
+            # 211 because then 10 kHz is minimal reached
+            if is_60 == 211:
                 return ind
         else:
             is_60 = 0
+    return None
 
 
 def open_csv(path, show, save_path, pyGui=False):
