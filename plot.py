@@ -3,6 +3,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import argparse, os, glob
+from matplotlib.ticker import FormatStrFormatter
 
 
 def plot(file, show, save_path, pyGui=False):
@@ -34,6 +35,8 @@ def plot(file, show, save_path, pyGui=False):
             ax1.plot(x_t, y_VMATH, label="MATH")
         ax1.set_xlabel("Zeit [ms]")
         ax1.set_ylabel("Spannung [V]")
+        decimal_places = 1
+        ax1.yaxis.set_major_formatter(FormatStrFormatter(f'%.{decimal_places}f'))
         ax1.legend()
     else:
         print("No time data found")
